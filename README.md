@@ -1,7 +1,8 @@
 # DevData
 
-A curated listing of quantitative data sources about software developers:
-language preferences, editor usage, ecosystem trends, and more.
+A curated listing of quantitative data sources about software developers
+and the hardware they use: language preferences, editor usage, ecosystem
+trends, Moore's Law, and more.
 
 ## About
 
@@ -35,6 +36,24 @@ and curious developers can find the data they need.
 - **[npm trends](https://npmtrends.com/)** — Compare npm package download counts over time.
 - **[PyPI Stats](https://pypistats.org/)** — Download statistics for Python packages from the Python Package Index.
 - **[GitHub Innovation Graph](https://innovationgraph.github.com/)** — Quarterly data on developer activity, repositories, and languages by country/territory. Downloadable as CSV.
+
+### Hardware Trends: Moore's Law & Processing Power
+
+- **[Karl Rupp's Microprocessor Trend Data](https://github.com/karlrupp/microprocessor-trend-data)** — 50 years of data on transistor counts, clock frequency, single-thread performance, TDP, and cores. Raw .dat files with Gnuplot scripts. CC BY 4.0.
+- **[Our World in Data: Moore's Law](https://ourworldindata.org/moores-law)** — Interactive charts on transistor counts over time, plus related pages on computing power and costs. Downloadable as CSV.
+- **[Wikipedia: Transistor Count](https://en.wikipedia.org/wiki/Transistor_count)** — Comprehensive table of transistor counts for CPUs, GPUs, and other chips from 1971 to present.
+- **[TOP500 Performance Development](https://www.top500.org/statistics/perfdevel/)** — FLOPS performance of the world's top supercomputers since 1993. Biannual (June and November).
+- **[Epoch AI: Notable AI Models](https://epochai.org/data/notable-ai-models)** — Compute (FLOPS), training cost, dataset size, and parameters for notable ML models. Downloadable CSV.
+- **[Wikipedia: FLOPS](https://en.wikipedia.org/wiki/FLOPS)** — Historical tables of CPU and GPU FLOPS records from the 1960s to present.
+
+### Hardware Trends: Memory & Storage
+
+- **[John McCallum's Memory Prices](https://jcmit.net/memoryprice.htm)** — Historical RAM prices per megabyte from 1957 to 2020. Widely cited in academic research.
+- **[Our World in Data: Memory & Storage Costs](https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage)** — Interactive chart of RAM and storage cost per megabyte from the 1950s to present.
+- **[John McCallum's Disk Drive Prices](https://jcmit.net/diskprice.htm)** — Historical HDD and SSD prices per gigabyte from 1956 to present.
+- **[Wikipedia: Memory Bandwidth](https://en.wikipedia.org/wiki/Memory_bandwidth)** — Tables of RAM bandwidth by generation (DDR through DDR5, GDDR, HBM).
+- **[Wikipedia: HDD/SSD Performance History](https://en.wikipedia.org/wiki/Hard_disk_drive#Data_transfer_rate)** — Historical data on storage transfer rates across drive generations.
+- **[AI Impacts: DRAM Price Trends](https://aiimpacts.org/trends-in-dram-price-per-gigabyte/)** — Analysis of DRAM price-per-gigabyte trends with modeling of decline rates.
 
 ## Contributing
 
