@@ -99,7 +99,7 @@
 <body>
     <header>
         <h1>DevData</h1>
-        <p>A curated listing of quantitative data sources about software developers: language preferences, editor usage, ecosystem trends, and more.</p>
+        <p>A curated listing of quantitative data sources about software developers and the hardware they use: language preferences, editor usage, ecosystem trends, Moore's Law, and more.</p>
     </header>
 
     <main>
@@ -275,6 +275,146 @@
                     <span class="tag">By country</span>
                     <span class="tag">Downloadable CSV</span>
                     <span class="tag">Open data</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Hardware Trends: Moore's Law &amp; Processing Power</h2>
+
+            <div class="source">
+                <h3><a href="https://github.com/karlrupp/microprocessor-trend-data">Karl Rupp's Microprocessor Trend Data</a></h3>
+                <p>50 years of microprocessor data: transistor counts, clock frequency, single-thread performance (SpecINT), TDP, and number of cores. Raw .dat files with Gnuplot scripts. The most widely cited open dataset for Moore's Law visualizations.</p>
+                <div class="tags">
+                    <span class="tag">1970&ndash;present</span>
+                    <span class="tag">Downloadable data</span>
+                    <span class="tag">Transistors</span>
+                    <span class="tag">Clock speed</span>
+                    <span class="tag">Cores</span>
+                    <span class="tag">CC BY 4.0</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://ourworldindata.org/moores-law">Our World in Data: Moore's Law</a></h3>
+                <p>Interactive charts on transistor counts over time, sourced from Rupp &amp; Horowitz. Part of a broader collection covering computing power, memory costs, and storage costs. All charts are downloadable as CSV/PNG.</p>
+                <div class="tags">
+                    <span class="tag">Interactive</span>
+                    <span class="tag">Downloadable CSV</span>
+                    <span class="tag">Transistors</span>
+                    <span class="tag">CC BY</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://en.wikipedia.org/wiki/Transistor_count">Wikipedia: Transistor Count</a></h3>
+                <p>Comprehensive table of transistor counts for CPUs, GPUs, FPGAs, and other chips from the Intel 4004 (1971) to the latest Apple and NVIDIA silicon. Regularly updated by editors.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">Transistors</span>
+                    <span class="tag">CPUs</span>
+                    <span class="tag">GPUs</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://www.top500.org/statistics/perfdevel/">TOP500 Performance Development</a></h3>
+                <p>Tracks FLOPS performance of the world's top supercomputers since 1993. Shows #1, #500, and sum of all systems over time. Biannual list (June and November). The definitive source for peak computing performance trends.</p>
+                <div class="tags">
+                    <span class="tag">Biannual</span>
+                    <span class="tag">FLOPS</span>
+                    <span class="tag">Supercomputers</span>
+                    <span class="tag">1993&ndash;present</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://epochai.org/data/notable-ai-models">Epoch AI: Notable AI Models</a></h3>
+                <p>Dataset of compute (FLOPS), training cost, dataset size, and parameters for notable ML models over time. Tracks the exponential growth in AI training compute. Downloadable as CSV.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">FLOPS</span>
+                    <span class="tag">AI/ML compute</span>
+                    <span class="tag">Downloadable CSV</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://en.wikipedia.org/wiki/FLOPS">Wikipedia: FLOPS</a></h3>
+                <p>Historical tables of CPU and GPU FLOPS performance, including single-precision and double-precision records. Covers consumer hardware, workstations, and GPGPUs from the 1960s to present.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">CPU FLOPS</span>
+                    <span class="tag">GPU FLOPS</span>
+                    <span class="tag">Historical tables</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Hardware Trends: Memory &amp; Storage</h2>
+
+            <div class="source">
+                <h3><a href="https://jcmit.net/memoryprice.htm">John McCallum's Memory Prices</a></h3>
+                <p>Historical RAM prices per megabyte from 1957 to 2020. One of the most thorough collections of DRAM pricing data, widely cited in academic research. Shows a factor-of-10 price drop roughly every 5 years.</p>
+                <div class="tags">
+                    <span class="tag">1957&ndash;2020</span>
+                    <span class="tag">RAM cost per MB</span>
+                    <span class="tag">Historical</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage">Our World in Data: Memory &amp; Storage Costs</a></h3>
+                <p>Interactive chart combining historical RAM and storage cost data from McCallum and other sources. Shows cost per megabyte from the 1950s to present for both memory and disk storage.</p>
+                <div class="tags">
+                    <span class="tag">Interactive</span>
+                    <span class="tag">Downloadable CSV</span>
+                    <span class="tag">RAM cost</span>
+                    <span class="tag">Storage cost</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://jcmit.net/diskprice.htm">John McCallum's Disk Drive Prices</a></h3>
+                <p>Historical hard drive and SSD prices per gigabyte from 1956 to present. Companion dataset to the memory prices page, tracking the cost of persistent storage over time.</p>
+                <div class="tags">
+                    <span class="tag">1956&ndash;present</span>
+                    <span class="tag">HDD cost per GB</span>
+                    <span class="tag">SSD cost per GB</span>
+                    <span class="tag">Historical</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://en.wikipedia.org/wiki/Memory_bandwidth">Wikipedia: Memory Bandwidth</a></h3>
+                <p>Tables of memory bandwidth by generation (DDR through DDR5, GDDR, HBM). Shows theoretical peak bandwidth for each standard, useful for tracking bandwidth growth over time.</p>
+                <div class="tags">
+                    <span class="tag">DDR generations</span>
+                    <span class="tag">RAM bandwidth</span>
+                    <span class="tag">HBM</span>
+                    <span class="tag">GDDR</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://en.wikipedia.org/wiki/Hard_disk_drive#Data_transfer_rate">Wikipedia: HDD/SSD Performance History</a></h3>
+                <p>Historical data on hard drive and solid-state drive transfer rates, including sequential read/write speeds across generations. Covers the transition from HDD to SSD dominance.</p>
+                <div class="tags">
+                    <span class="tag">Storage bandwidth</span>
+                    <span class="tag">HDD</span>
+                    <span class="tag">SSD</span>
+                    <span class="tag">NVMe</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://aiimpacts.org/trends-in-dram-price-per-gigabyte/">AI Impacts: DRAM Price Trends</a></h3>
+                <p>Analysis of DRAM price-per-gigabyte trends with data sourced from McCallum and other references. Includes modeling of price decline rates and discussion of methodology.</p>
+                <div class="tags">
+                    <span class="tag">RAM cost trends</span>
+                    <span class="tag">Analysis</span>
+                    <span class="tag">Historical</span>
                 </div>
             </div>
         </section>
