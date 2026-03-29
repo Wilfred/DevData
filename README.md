@@ -1,5 +1,7 @@
 # DevData
 
+**Live site: [wilfred.github.io/devdata](https://wilfred.github.io/devdata/)**
+
 A curated listing of quantitative data sources about software developers
 and the hardware they use: language preferences, editor usage, ecosystem
 trends, Moore's Law, and more.
