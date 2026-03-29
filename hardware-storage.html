@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>HDD and SSD pricing trends over time.</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html">Surveys</a>
+      <a href="rankings.html">Rankings</a>
+      <a href="trends.html">Usage Trends</a>
+      <a href="hardware-compute.html">Compute</a>
+      <a href="hardware-memory.html">Memory</a>
+      <a href="hardware-storage.html" class="active">Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Cost per GB Over Time</h2>
+        <div class="chart-container">
+          <h3>HDD cost per GB in USD (log scale)</h3>
+          <canvas id="storageCostChart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a href="https://jcmit.net/diskprice.htm"
+              >John McCallum's Disk Drive Prices</a
+            >
+            <span class="freshness stale">Last updated 2020</span>
+          </h3>
+          <p>
+            HDD and SSD price per GB from 1956 to present. Companion to memory
+            prices dataset.
+          </p>
+          <div class="tags">
+            <span class="tag">1956&ndash;present</span>
+            <span class="tag">HDD</span>
+            <span class="tag">SSD</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a
+              href="https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage"
+              >Our World in Data: Memory &amp; Storage Costs</a
+            >
+            <span class="freshness">2023</span>
+          </h3>
+          <p>
+            Interactive chart of RAM and storage costs from the 1950s to
+            present. CSV download.
+          </p>
+          <div class="tags">
+            <span class="tag">Interactive</span>
+            <span class="tag">Downloadable CSV</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a
+              href="https://en.wikipedia.org/wiki/Hard_disk_drive#Data_transfer_rate"
+              >Wikipedia: HDD/SSD Performance</a
+            >
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Sequential read/write speeds across storage generations. Covers HDD
+            to NVMe SSD transition.
+          </p>
+          <div class="tags">
+            <span class="tag">HDD</span>
+            <span class="tag">SSD</span>
+            <span class="tag">NVMe</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://hblok.net/blog/storage/"
+              >hblok.net: Storage Cost History</a
+            >
+            <span class="freshness">2024</span>
+          </h3>
+          <p>
+            Continues McCallum's work. Downloadable CSVs for RAM, HDD, SSD, and
+            flash prices. CC BY-SA 3.0.
+          </p>
+          <div class="tags">
+            <span class="tag">Downloadable CSV</span>
+            <span class="tag">SSD</span>
+            <span class="tag">HDD</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a
+              href="https://www.backblaze.com/blog/hard-drive-cost-per-gigabyte/"
+              >Backblaze: HDD Cost per GB</a
+            >
+            <span class="freshness">2023</span>
+          </h3>
+          <p>
+            Real-world HDD pricing from a cloud provider running 250,000+
+            drives. Notes where price decline has flattened.
+          </p>
+          <div class="tags">
+            <span class="tag">HDD cost per GB</span>
+            <span class="tag">Real-world data</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+
+    <script>
+      new Chart(document.getElementById("storageCostChart"), {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "HDD ($/GB)",
+              data: [
+                { x: 1980, y: 500000 },
+                { x: 1985, y: 100000 },
+                { x: 1990, y: 10000 },
+                { x: 1995, y: 1000 },
+                { x: 2000, y: 10 },
+                { x: 2005, y: 1 },
+                { x: 2010, y: 0.1 },
+                { x: 2015, y: 0.035 },
+                { x: 2020, y: 0.02 },
+              ],
+              backgroundColor: "#10b981",
+              borderColor: "#10b981",
+              showLine: true,
+              tension: 0.3,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "bottom" },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const v = ctx.raw.y;
+                  return ctx.dataset.label + " " + ctx.raw.x + ": $" + v;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              type: "logarithmic",
+              title: { display: true, text: "USD per GB" },
+              ticks: {
+                callback: (v) => {
+                  if (v >= 1e6) return "$" + v / 1e6 + "M";
+                  if (v >= 1e3) return "$" + v / 1e3 + "K";
+                  if (v >= 1) return "$" + v;
+                  return "$" + v;
+                },
+              },
+            },
+            x: {
+              title: { display: true, text: "Year" },
+              ticks: {
+                callback: (v) => String(v),
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
