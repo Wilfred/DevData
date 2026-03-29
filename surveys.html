@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Surveys — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>Developer surveys &mdash; languages, tools, and salaries.</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html" class="active">Surveys</a>
+      <a href="rankings.html">Rankings</a>
+      <a href="trends.html">Usage Trends</a>
+      <a href="hardware-compute.html">Compute</a>
+      <a href="hardware-memory.html">Memory &amp; Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Survey Sample Sizes</h2>
+        <div class="chart-container">
+          <h3>Respondents per Survey (most recent edition)</h3>
+          <canvas id="surveySizesChart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a href="https://survey.stackoverflow.co/"
+              >Stack Overflow Developer Survey</a
+            >
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            90,000+ developers. Languages, frameworks, databases, tools,
+            salaries, and work preferences. Raw data downloadable.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Downloadable data</span>
+            <span class="tag">Languages</span>
+            <span class="tag">Salaries</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://www.jetbrains.com/lp/devecosystem-2024/"
+              >JetBrains Developer Ecosystem Survey</a
+            >
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            25,000+ developers. Languages, tools, technologies, and practices
+            with detailed per-language breakdowns.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Languages</span>
+            <span class="tag">IDEs</span>
+            <span class="tag">Tools</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://stateofjs.com/">State of JS</a> /
+            <a href="https://stateofcss.com/">State of CSS</a>
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            JavaScript and CSS ecosystem tracking. Library adoption,
+            satisfaction, and usage patterns with interactive visualizations.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">JavaScript</span>
+            <span class="tag">CSS</span>
+            <span class="tag">Frameworks</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://www.developereconomics.com/"
+              >SlashData Developer Nation</a
+            >
+            <span class="freshness">Q1 2025</span>
+          </h3>
+          <p>
+            30,000+ developers worldwide. Language adoption, cloud platforms,
+            IoT, ML, and demographics. Quarterly cadence.
+          </p>
+          <div class="tags">
+            <span class="tag">Quarterly</span>
+            <span class="tag">Languages</span>
+            <span class="tag">Cloud</span>
+            <span class="tag">Demographics</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://www.hackerrank.com/research/developer-skills/"
+              >HackerRank Developer Skills Report</a
+            >
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            Hiring trends and in-demand skills based on millions of coding
+            assessments.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Hiring</span>
+            <span class="tag">Skills</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+
+    <script>
+      new Chart(document.getElementById("surveySizesChart"), {
+        type: "bar",
+        data: {
+          labels: [
+            "Stack Overflow",
+            "SlashData",
+            "JetBrains",
+            "State of JS",
+            "HackerRank",
+          ],
+          datasets: [
+            {
+              label: "Respondents",
+              data: [90000, 30000, 25000, 23000, 17000],
+              backgroundColor: [
+                "#3b82f6",
+                "#8b5cf6",
+                "#06b6d4",
+                "#f59e0b",
+                "#10b981",
+              ],
+              borderRadius: 4,
+            },
+          ],
+        },
+        options: {
+          indexAxis: "y",
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+          },
+          scales: {
+            x: {
+              ticks: {
+                callback: (v) => (v >= 1000 ? v / 1000 + "k" : v),
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

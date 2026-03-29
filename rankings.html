@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rankings — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>Language popularity indices and composite rankings.</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html">Surveys</a>
+      <a href="rankings.html" class="active">Rankings</a>
+      <a href="trends.html">Usage Trends</a>
+      <a href="hardware-compute.html">Compute</a>
+      <a href="hardware-memory.html">Memory &amp; Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Language Rankings Comparison</h2>
+        <div class="chart-container">
+          <h3>
+            Top 10 Languages across RedMonk, PYPL, and IEEE Spectrum (2024)
+          </h3>
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Language</th>
+                <th>RedMonk (Jan 2024)</th>
+                <th>PYPL (Mar 2025)</th>
+                <th>IEEE (2024)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Python</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>JavaScript</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Java</td>
+                <td>3</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>TypeScript</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>C#</td>
+                <td>5</td>
+                <td>4</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>C++</td>
+                <td>6</td>
+                <td>6</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>C</td>
+                <td>7</td>
+                <td>7</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>PHP</td>
+                <td>8</td>
+                <td>8</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Go</td>
+                <td>11</td>
+                <td>10</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Rust</td>
+                <td>13</td>
+                <td>9</td>
+                <td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a
+              href="https://redmonk.com/sogrady/category/technology/programming-languages/"
+              >RedMonk Language Rankings</a
+            >
+            <span class="freshness">Jan 2024</span>
+          </h3>
+          <p>
+            Biannual composite of GitHub activity + Stack Overflow discussion.
+            Published since 2010.
+          </p>
+          <div class="tags">
+            <span class="tag">Biannual</span>
+            <span class="tag">GitHub + SO</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://pypl.github.io/PYPL.html">PYPL Index</a>
+            <span class="freshness">Mar 2025</span>
+          </h3>
+          <p>
+            Monthly index from Google Trends tutorial search data. Covers
+            languages, IDEs, ORMs, and databases.
+          </p>
+          <div class="tags">
+            <span class="tag">Monthly</span>
+            <span class="tag">Google Trends</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://spectrum.ieee.org/top-programming-languages/"
+              >IEEE Spectrum Rankings</a
+            >
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            Annual interactive ranking combining GitHub, Google, Stack Overflow,
+            Twitter, and job data. Customizable weighting.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Multi-source</span>
+            <span class="tag">Interactive</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+  </body>
+</html>

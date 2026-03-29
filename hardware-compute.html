@@ -1,0 +1,321 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compute Hardware — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>Moore's Law, transistor counts, and compute performance.</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html">Surveys</a>
+      <a href="rankings.html">Rankings</a>
+      <a href="trends.html">Usage Trends</a>
+      <a href="hardware-compute.html" class="active">Compute</a>
+      <a href="hardware-memory.html">Memory &amp; Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Moore's Law: Transistor Counts</h2>
+        <div class="chart-container">
+          <h3>Transistors per chip (log scale, selected processors)</h3>
+          <canvas id="mooresLawChart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>TOP500 Supercomputer Performance</h2>
+        <div class="chart-container">
+          <h3>#1 system FLOPS over time (log scale)</h3>
+          <canvas id="top500Chart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a href="https://github.com/karlrupp/microprocessor-trend-data"
+              >Karl Rupp's Microprocessor Trend Data</a
+            >
+            <span class="freshness">Updated 2024</span>
+          </h3>
+          <p>
+            50 years of transistor counts, clock frequency, single-thread perf,
+            TDP, and cores. Open .dat files with Gnuplot scripts.
+          </p>
+          <div class="tags">
+            <span class="tag">1970&ndash;present</span>
+            <span class="tag">Downloadable data</span>
+            <span class="tag">CC BY 4.0</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://ourworldindata.org/moores-law"
+              >Our World in Data: Moore's Law</a
+            >
+            <span class="freshness">2023</span>
+          </h3>
+          <p>
+            Interactive transistor charts sourced from Rupp &amp; Horowitz.
+            Downloadable CSV/PNG.
+          </p>
+          <div class="tags">
+            <span class="tag">Interactive</span>
+            <span class="tag">Downloadable CSV</span>
+            <span class="tag">CC BY</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://en.wikipedia.org/wiki/Transistor_count"
+              >Wikipedia: Transistor Count</a
+            >
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            CPUs, GPUs, FPGAs from Intel 4004 (1971) to latest Apple/NVIDIA
+            silicon.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">CPUs</span>
+            <span class="tag">GPUs</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://www.top500.org/statistics/perfdevel/"
+              >TOP500 Performance Development</a
+            >
+            <span class="freshness">Nov 2024</span>
+          </h3>
+          <p>
+            #1, #500, and aggregate FLOPS for top supercomputers since 1993.
+            Biannual (June &amp; November).
+          </p>
+          <div class="tags">
+            <span class="tag">Biannual</span>
+            <span class="tag">FLOPS</span>
+            <span class="tag">1993&ndash;present</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://epochai.org/data/notable-ai-models"
+              >Epoch AI: Notable AI Models</a
+            >
+            <span class="freshness">Mar 2025</span>
+          </h3>
+          <p>
+            Compute (FLOPS), cost, dataset size, and parameters for notable ML
+            models. Downloadable CSV.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">AI/ML compute</span>
+            <span class="tag">Downloadable CSV</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://epoch.ai/data/machine-learning-hardware"
+              >Epoch AI: ML Hardware Dataset</a
+            >
+            <span class="freshness">2024</span>
+          </h3>
+          <p>
+            170+ AI accelerators: FLOP/s, memory bandwidth, die size, power, and
+            price. CSV download, CC BY.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">GPU FLOPS</span>
+            <span class="tag">Downloadable CSV</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://en.wikipedia.org/wiki/FLOPS">Wikipedia: FLOPS</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Historical CPU and GPU FLOPS tables. Consumer hardware through
+            GPGPUs, 1960s to present.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">CPU FLOPS</span>
+            <span class="tag">GPU FLOPS</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+
+    <script>
+      // Moore's Law: transistor counts (log scale)
+      new Chart(document.getElementById("mooresLawChart"), {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "Transistors",
+              data: [
+                { x: 1971, y: 2300 },
+                { x: 1974, y: 4500 },
+                { x: 1978, y: 29000 },
+                { x: 1982, y: 134000 },
+                { x: 1985, y: 275000 },
+                { x: 1989, y: 1200000 },
+                { x: 1993, y: 3100000 },
+                { x: 1997, y: 7500000 },
+                { x: 1999, y: 24000000 },
+                { x: 2003, y: 55000000 },
+                { x: 2006, y: 291000000 },
+                { x: 2008, y: 731000000 },
+                { x: 2010, y: 1170000000 },
+                { x: 2012, y: 1400000000 },
+                { x: 2014, y: 2600000000 },
+                { x: 2017, y: 19200000000 },
+                { x: 2020, y: 39540000000 },
+                { x: 2022, y: 57000000000 },
+                { x: 2023, y: 114000000000 },
+              ],
+              backgroundColor: "#3b82f6",
+              borderColor: "#3b82f6",
+              showLine: true,
+              tension: 0.2,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const v = ctx.raw.y;
+                  if (v >= 1e9)
+                    return ctx.raw.x + ": " + (v / 1e9).toFixed(1) + "B";
+                  if (v >= 1e6)
+                    return ctx.raw.x + ": " + (v / 1e6).toFixed(1) + "M";
+                  if (v >= 1e3)
+                    return ctx.raw.x + ": " + (v / 1e3).toFixed(1) + "K";
+                  return ctx.raw.x + ": " + v;
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              type: "logarithmic",
+              title: { display: true, text: "Transistors" },
+              ticks: {
+                callback: (v) => {
+                  if (v >= 1e9) return v / 1e9 + "B";
+                  if (v >= 1e6) return v / 1e6 + "M";
+                  if (v >= 1e3) return v / 1e3 + "K";
+                  return v;
+                },
+              },
+            },
+            x: {
+              title: { display: true, text: "Year" },
+            },
+          },
+        },
+      });
+
+      // TOP500 #1 system performance
+      new Chart(document.getElementById("top500Chart"), {
+        type: "scatter",
+        data: {
+          datasets: [
+            {
+              label: "#1 System (GFLOPS)",
+              data: [
+                { x: 1993, y: 59.7 },
+                { x: 1996, y: 368 },
+                { x: 1999, y: 2379 },
+                { x: 2002, y: 35860 },
+                { x: 2004, y: 70720 },
+                { x: 2008, y: 1105000 },
+                { x: 2010, y: 2566000 },
+                { x: 2012, y: 17590000 },
+                { x: 2013, y: 33862700 },
+                { x: 2018, y: 143500000 },
+                { x: 2020, y: 442010000 },
+                { x: 2022, y: 1102000000 },
+                { x: 2024, y: 1353000000 },
+              ],
+              backgroundColor: "#ef4444",
+              borderColor: "#ef4444",
+              showLine: true,
+              tension: 0.2,
+              pointRadius: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              callbacks: {
+                label: (ctx) => {
+                  const v = ctx.raw.y;
+                  if (v >= 1e9)
+                    return (v / 1e9).toFixed(2) + " EFLOPS (10\u00b9\u2078)";
+                  if (v >= 1e6) return (v / 1e6).toFixed(1) + " PFLOPS";
+                  if (v >= 1e3) return (v / 1e3).toFixed(1) + " TFLOPS";
+                  return v + " GFLOPS";
+                },
+              },
+            },
+          },
+          scales: {
+            y: {
+              type: "logarithmic",
+              title: { display: true, text: "GFLOPS" },
+              ticks: {
+                callback: (v) => {
+                  if (v >= 1e9) return v / 1e9 + "E";
+                  if (v >= 1e6) return v / 1e6 + "P";
+                  if (v >= 1e3) return v / 1e3 + "T";
+                  return v + "G";
+                },
+              },
+            },
+            x: {
+              title: { display: true, text: "Year" },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
