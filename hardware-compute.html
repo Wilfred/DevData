@@ -18,7 +18,8 @@
       <a href="rankings.html">Rankings</a>
       <a href="trends.html">Usage Trends</a>
       <a href="hardware-compute.html" class="active">Compute</a>
-      <a href="hardware-memory.html">Memory &amp; Storage</a>
+      <a href="hardware-memory.html">Memory</a>
+      <a href="hardware-storage.html">Storage</a>
     </nav>
 
     <main>
@@ -245,6 +246,9 @@
             },
             x: {
               title: { display: true, text: "Year" },
+              ticks: {
+                callback: (v) => String(v),
+              },
             },
           },
         },
@@ -312,6 +316,9 @@
             },
             x: {
               title: { display: true, text: "Year" },
+              ticks: {
+                callback: (v) => String(v),
+              },
             },
           },
         },

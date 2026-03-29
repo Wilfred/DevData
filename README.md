@@ -34,7 +34,7 @@ and curious developers can find the data they need.
 - **[Stack Overflow Trends](https://insights.stackoverflow.com/trends)** — Interactive tool showing the percentage of Stack Overflow questions by tag over time.
 - **[GitHub Octoverse](https://github.blog/news-insights/octoverse/)** — GitHub's annual report on the state of open source: top languages, contributors, and repository trends.
 - **[GitHut 2.0](https://madnight.github.io/githut/)** — Quarterly GitHub language statistics based on pull requests, issues, pushes, and stars.
-- **[modulecounts.com](http://www.modulecounts.com/)** — Tracks the growth of major package registries (npm, PyPI, Maven, RubyGems, crates.io, etc.) over time.
+- **[modulecounts](https://github.com/edebill/modulecounts)** — Tracked the growth of major package registries (npm, PyPI, Maven, RubyGems, crates.io, etc.) over time. The deployed site is no longer available, but historical data and source code remain in the GitHub repository.
 - **[npm trends](https://npmtrends.com/)** — Compare npm package download counts over time.
 - **[PyPI Stats](https://pypistats.org/)** — Download statistics for Python packages from the Python Package Index.
 - **[GitHub Innovation Graph](https://innovationgraph.github.com/)** — Quarterly data on developer activity, repositories, and languages by country/territory. Downloadable as CSV.
@@ -49,16 +49,20 @@ and curious developers can find the data they need.
 - **[Epoch AI: ML Hardware Dataset](https://epoch.ai/data/machine-learning-hardware)** — Specs for 170+ GPUs/TPUs: FLOP/s (FP32/FP16/INT8), memory bandwidth, die size, power, and price. Downloadable CSV.
 - **[Wikipedia: FLOPS](https://en.wikipedia.org/wiki/FLOPS)** — Historical tables of CPU and GPU FLOPS records from the 1960s to present.
 
-### Hardware Trends: Memory & Storage
+### Hardware Trends: Memory
 
 - **[John McCallum's Memory Prices](https://jcmit.net/memoryprice.htm)** — Historical RAM prices per megabyte from 1957 to 2020. Widely cited in academic research.
-- **[Our World in Data: Memory & Storage Costs](https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage)** — Interactive chart of RAM and storage cost per megabyte from the 1950s to present.
-- **[John McCallum's Disk Drive Prices](https://jcmit.net/diskprice.htm)** — Historical HDD and SSD prices per gigabyte from 1956 to present.
 - **[Wikipedia: Memory Bandwidth](https://en.wikipedia.org/wiki/Memory_bandwidth)** — Tables of RAM bandwidth by generation (DDR through DDR5, GDDR, HBM).
+- **[hblok.net: Historical Cost of Memory and Storage](https://hblok.net/blog/storage/)** — Continues McCallum's data as downloadable CSV files for RAM, magnetic disk, SSD, and flash. CC BY-SA 3.0.
+- **[AI Impacts: DRAM Price Trends](https://aiimpacts.org/trends-in-dram-price-per-gigabyte/)** — Analysis of DRAM price-per-gigabyte trends with modeling of decline rates.
+
+### Hardware Trends: Storage
+
+- **[John McCallum's Disk Drive Prices](https://jcmit.net/diskprice.htm)** — Historical HDD and SSD prices per gigabyte from 1956 to present.
+- **[Our World in Data: Memory & Storage Costs](https://ourworldindata.org/grapher/historical-cost-of-computer-memory-and-storage)** — Interactive chart of RAM and storage cost per megabyte from the 1950s to present.
 - **[Wikipedia: HDD/SSD Performance History](https://en.wikipedia.org/wiki/Hard_disk_drive#Data_transfer_rate)** — Historical data on storage transfer rates across drive generations.
 - **[hblok.net: Historical Cost of Memory and Storage](https://hblok.net/blog/storage/)** — Continues McCallum's data as downloadable CSV files for RAM, magnetic disk, SSD, and flash. CC BY-SA 3.0.
 - **[Backblaze: Hard Drive Cost per Gigabyte](https://www.backblaze.com/blog/hard-drive-cost-per-gigabyte/)** — HDD pricing from a cloud provider running 250,000+ drives. Real-world perspective on storage economics.
-- **[AI Impacts: DRAM Price Trends](https://aiimpacts.org/trends-in-dram-price-per-gigabyte/)** — Analysis of DRAM price-per-gigabyte trends with modeling of decline rates.
 
 ## Contributing
 
