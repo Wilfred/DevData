@@ -1,25 +1,287 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevData — Quantitative Data Sources About Developers</title>
     <style>
-      body {
-        font-family: system-ui, sans-serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        margin: 0;
-        background: #f5f5f5;
-      }
-      h1 {
-        color: #333;
-      }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: #fafafa;
+        }
+        header {
+            background: #0f172a;
+            color: #f1f5f9;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        header p {
+            margin-top: 0.75rem;
+            font-size: 1.15rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+        section {
+            margin-bottom: 2.5rem;
+        }
+        section h2 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #0f172a;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .source {
+            background: #fff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 0.75rem;
+            transition: box-shadow 0.15s;
+        }
+        .source:hover {
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .source h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.25rem;
+        }
+        .source h3 a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+        .source h3 a:hover {
+            text-decoration: underline;
+        }
+        .source p {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        .tags {
+            margin-top: 0.5rem;
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-size: 0.75rem;
+            background: #f1f5f9;
+            color: #475569;
+            padding: 0.15rem 0.55rem;
+            border-radius: 999px;
+            border: 1px solid #e2e8f0;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 1.5rem;
+            color: #94a3b8;
+            font-size: 0.85rem;
+        }
+        footer a { color: #64748b; }
     </style>
-  </head>
-  <body>
-    <h1>Hello, World!</h1>
-  </body>
+</head>
+<body>
+    <header>
+        <h1>DevData</h1>
+        <p>A curated listing of quantitative data sources about software developers: language preferences, editor usage, ecosystem trends, and more.</p>
+    </header>
+
+    <main>
+        <section>
+            <h2>Surveys</h2>
+
+            <div class="source">
+                <h3><a href="https://survey.stackoverflow.co/">Stack Overflow Developer Survey</a></h3>
+                <p>Annual survey of 90,000+ developers covering languages, frameworks, databases, tools, salaries, and work preferences. One of the largest and most widely cited developer surveys. Raw data is downloadable for custom analysis.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">Downloadable data</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">Tools</span>
+                    <span class="tag">Salaries</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://www.jetbrains.com/lp/devecosystem-2024/">JetBrains Developer Ecosystem Survey</a></h3>
+                <p>Annual survey of 25,000+ developers covering programming languages, tools, technologies, and development practices. Includes detailed breakdowns by language ecosystem.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">IDEs</span>
+                    <span class="tag">Tools</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://stateofjs.com/">State of JS</a> / <a href="https://stateofcss.com/">State of CSS</a></h3>
+                <p>Annual surveys tracking the JavaScript and CSS ecosystems. Covers library adoption, satisfaction, awareness, and usage patterns with rich interactive visualizations.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">JavaScript</span>
+                    <span class="tag">CSS</span>
+                    <span class="tag">Frameworks</span>
+                    <span class="tag">Interactive</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://www.developereconomics.com/">SlashData Developer Nation</a></h3>
+                <p>Quarterly survey reaching 30,000+ developers worldwide. Covers language adoption, cloud platforms, IoT, machine learning, and developer demographics.</p>
+                <div class="tags">
+                    <span class="tag">Quarterly</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">Cloud</span>
+                    <span class="tag">Demographics</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://www.hackerrank.com/research/developer-skills/">HackerRank Developer Skills Report</a></h3>
+                <p>Annual report on developer hiring trends, in-demand skills, and language preferences based on millions of coding assessments and developer surveys.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">Hiring</span>
+                    <span class="tag">Skills</span>
+                    <span class="tag">Languages</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Indices &amp; Rankings</h2>
+
+            <div class="source">
+                <h3><a href="https://redmonk.com/sogrady/category/technology/programming-languages/">RedMonk Programming Language Rankings</a></h3>
+                <p>Biannual ranking that combines GitHub activity and Stack Overflow discussion to produce a composite language popularity score. Published since 2010.</p>
+                <div class="tags">
+                    <span class="tag">Biannual</span>
+                    <span class="tag">GitHub + Stack Overflow</span>
+                    <span class="tag">Languages</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://pypl.github.io/PYPL.html">PYPL PopularitY of Programming Language</a></h3>
+                <p>Monthly index based on Google Trends data for programming language tutorial searches. Covers languages, IDEs, ORM frameworks, and databases.</p>
+                <div class="tags">
+                    <span class="tag">Monthly</span>
+                    <span class="tag">Google Trends</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">IDEs</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://spectrum.ieee.org/top-programming-languages/">IEEE Spectrum Top Programming Languages</a></h3>
+                <p>Annual interactive ranking that combines data from multiple sources including GitHub, Google Search, Stack Overflow, Twitter, and job sites. Customizable weighting.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">Multi-source</span>
+                    <span class="tag">Interactive</span>
+                    <span class="tag">Languages</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Usage &amp; Trend Data</h2>
+
+            <div class="source">
+                <h3><a href="https://insights.stackoverflow.com/trends">Stack Overflow Trends</a></h3>
+                <p>Interactive tool showing the percentage of Stack Overflow questions by tag over time. Compare up to 15 tags to see how developer interest in languages, frameworks, and tools has shifted.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">Interactive</span>
+                    <span class="tag">Questions by tag</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://github.blog/news-insights/octoverse/">GitHub Octoverse</a></h3>
+                <p>GitHub's annual report on the state of open source. Covers top programming languages, contributor growth, repository trends, and global developer activity across 100M+ developers.</p>
+                <div class="tags">
+                    <span class="tag">Annual</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">Open source</span>
+                    <span class="tag">Contributors</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://madnight.github.io/githut/">GitHut 2.0</a></h3>
+                <p>Quarterly GitHub language statistics derived from pull requests, issues, pushes, and stars. Provides a more granular, continuously updated view of GitHub language usage.</p>
+                <div class="tags">
+                    <span class="tag">Quarterly</span>
+                    <span class="tag">GitHub data</span>
+                    <span class="tag">Languages</span>
+                    <span class="tag">Interactive</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="http://www.modulecounts.com/">modulecounts.com</a></h3>
+                <p>Tracks the growth of major package registries over time: npm, PyPI, Maven Central, RubyGems, crates.io, NuGet, Packagist, and more. Simple charts showing total module counts.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">Package managers</span>
+                    <span class="tag">Ecosystem growth</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://npmtrends.com/">npm trends</a></h3>
+                <p>Compare npm package download counts over time. Useful for evaluating the relative popularity of competing JavaScript libraries and frameworks.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">npm</span>
+                    <span class="tag">Package downloads</span>
+                    <span class="tag">Interactive</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://pypistats.org/">PyPI Stats</a></h3>
+                <p>Download statistics for Python packages from the Python Package Index. Provides per-package daily, weekly, and monthly download counts with breakdowns by Python version and system.</p>
+                <div class="tags">
+                    <span class="tag">Continuously updated</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Package downloads</span>
+                    <span class="tag">API available</span>
+                </div>
+            </div>
+
+            <div class="source">
+                <h3><a href="https://innovationgraph.github.com/">GitHub Innovation Graph</a></h3>
+                <p>Quarterly data on developer activity, repositories, and languages broken down by country and territory. Downloadable as CSV for research and analysis.</p>
+                <div class="tags">
+                    <span class="tag">Quarterly</span>
+                    <span class="tag">By country</span>
+                    <span class="tag">Downloadable CSV</span>
+                    <span class="tag">Open data</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>DevData &mdash; <a href="https://github.com/wilfred/devdata">View on GitHub</a></p>
+    </footer>
+</body>
 </html>
