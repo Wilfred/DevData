@@ -1,6 +1,6 @@
 # DevData
 
-**Live site: [wilfred.github.io/devdata](https://wilfred.github.io/devdata/)**
+**Live site: [www.wilfred.me.uk/DevData](https://www.wilfred.me.uk/DevData/)**
 
 A curated listing of quantitative data sources about software developers
 and the hardware they use: language preferences, editor usage, ecosystem
