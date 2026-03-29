@@ -44,6 +44,7 @@ and curious developers can find the data they need.
 - **[Wikipedia: Transistor Count](https://en.wikipedia.org/wiki/Transistor_count)** — Comprehensive table of transistor counts for CPUs, GPUs, and other chips from 1971 to present.
 - **[TOP500 Performance Development](https://www.top500.org/statistics/perfdevel/)** — FLOPS performance of the world's top supercomputers since 1993. Biannual (June and November).
 - **[Epoch AI: Notable AI Models](https://epochai.org/data/notable-ai-models)** — Compute (FLOPS), training cost, dataset size, and parameters for notable ML models. Downloadable CSV.
+- **[Epoch AI: ML Hardware Dataset](https://epoch.ai/data/machine-learning-hardware)** — Specs for 170+ GPUs/TPUs: FLOP/s (FP32/FP16/INT8), memory bandwidth, die size, power, and price. Downloadable CSV.
 - **[Wikipedia: FLOPS](https://en.wikipedia.org/wiki/FLOPS)** — Historical tables of CPU and GPU FLOPS records from the 1960s to present.
 
 ### Hardware Trends: Memory & Storage
@@ -53,6 +54,8 @@ and curious developers can find the data they need.
 - **[John McCallum's Disk Drive Prices](https://jcmit.net/diskprice.htm)** — Historical HDD and SSD prices per gigabyte from 1956 to present.
 - **[Wikipedia: Memory Bandwidth](https://en.wikipedia.org/wiki/Memory_bandwidth)** — Tables of RAM bandwidth by generation (DDR through DDR5, GDDR, HBM).
 - **[Wikipedia: HDD/SSD Performance History](https://en.wikipedia.org/wiki/Hard_disk_drive#Data_transfer_rate)** — Historical data on storage transfer rates across drive generations.
+- **[hblok.net: Historical Cost of Memory and Storage](https://hblok.net/blog/storage/)** — Continues McCallum's data as downloadable CSV files for RAM, magnetic disk, SSD, and flash. CC BY-SA 3.0.
+- **[Backblaze: Hard Drive Cost per Gigabyte](https://www.backblaze.com/blog/hard-drive-cost-per-gigabyte/)** — HDD pricing from a cloud provider running 250,000+ drives. Real-world perspective on storage economics.
 - **[AI Impacts: DRAM Price Trends](https://aiimpacts.org/trends-in-dram-price-per-gigabyte/)** — Analysis of DRAM price-per-gigabyte trends with modeling of decline rates.
 
 ## Contributing
