@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Usage Trends — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>Package ecosystem growth and developer activity trends.</p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html">Surveys</a>
+      <a href="rankings.html">Rankings</a>
+      <a href="trends.html" class="active">Usage Trends</a>
+      <a href="hardware-compute.html">Compute</a>
+      <a href="hardware-memory.html">Memory &amp; Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Package Registry Growth</h2>
+        <div class="chart-container">
+          <h3>Total packages by registry (thousands)</h3>
+          <canvas id="registryChart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a href="https://insights.stackoverflow.com/trends"
+              >Stack Overflow Trends</a
+            >
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Question share by tag over time. Compare up to 15 tags
+            interactively.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">Questions by tag</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://github.blog/news-insights/octoverse/"
+              >GitHub Octoverse</a
+            >
+            <span class="freshness">Oct 2024</span>
+          </h3>
+          <p>
+            Annual open-source report. Top languages, contributor growth, and
+            global activity across 100M+ developers.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Languages</span>
+            <span class="tag">Open source</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://madnight.github.io/githut/">GitHut 2.0</a>
+            <span class="freshness">Q4 2024</span>
+          </h3>
+          <p>
+            Quarterly GitHub language stats from PRs, issues, pushes, and stars.
+          </p>
+          <div class="tags">
+            <span class="tag">Quarterly</span>
+            <span class="tag">GitHub data</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="http://www.modulecounts.com/">modulecounts.com</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Tracks total packages across npm, PyPI, Maven Central, RubyGems,
+            crates.io, NuGet, and more.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">Package managers</span>
+            <span class="tag">Ecosystem growth</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://npmtrends.com/">npm trends</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Compare npm package download counts over time for competing JS
+            libraries.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">npm</span>
+            <span class="tag">Package downloads</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://pypistats.org/">PyPI Stats</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Per-package daily/weekly/monthly Python downloads with Python
+            version and OS breakdowns. API available.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">Python</span>
+            <span class="tag">API available</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://innovationgraph.github.com/"
+              >GitHub Innovation Graph</a
+            >
+            <span class="freshness">Q3 2024</span>
+          </h3>
+          <p>
+            Developer activity and languages by country/territory. Downloadable
+            as CSV.
+          </p>
+          <div class="tags">
+            <span class="tag">Quarterly</span>
+            <span class="tag">By country</span>
+            <span class="tag">Downloadable CSV</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+
+    <script>
+      new Chart(document.getElementById("registryChart"), {
+        type: "line",
+        data: {
+          labels: [
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+          ],
+          datasets: [
+            {
+              label: "npm",
+              data: [500, 700, 1000, 1300, 1600, 1900, 2200, 2600],
+              borderColor: "#cb3837",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "PyPI",
+              data: [115, 150, 200, 265, 340, 400, 475, 560],
+              borderColor: "#3776ab",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "Maven Central",
+              data: [220, 280, 340, 400, 470, 530, 580, 640],
+              borderColor: "#c71a36",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "NuGet",
+              data: [100, 130, 170, 220, 280, 330, 370, 410],
+              borderColor: "#004880",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "crates.io",
+              data: [10, 20, 32, 48, 68, 95, 125, 160],
+              borderColor: "#dea584",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "bottom" },
+          },
+          scales: {
+            y: {
+              title: { display: true, text: "Packages (thousands)" },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
