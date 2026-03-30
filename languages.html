@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Programming Languages — DevData</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">DevData</a></h1>
+      <p>
+        Language popularity rankings, package ecosystem growth, and developer
+        activity trends.
+      </p>
+    </header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="surveys.html">Surveys</a>
+      <a href="languages.html" class="active">Languages</a>
+      <a href="hardware-compute.html">Compute</a>
+      <a href="hardware-memory.html">Memory</a>
+      <a href="hardware-storage.html">Storage</a>
+    </nav>
+
+    <main>
+      <section>
+        <h2>Language Rankings Comparison</h2>
+        <div class="chart-container">
+          <h3>
+            Top 10 Languages across RedMonk, PYPL, and IEEE Spectrum (2024)
+          </h3>
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Language</th>
+                <th>RedMonk (Jan 2024)</th>
+                <th>PYPL (Mar 2025)</th>
+                <th>IEEE (2024)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Python</td>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>JavaScript</td>
+                <td>1</td>
+                <td>3</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Java</td>
+                <td>3</td>
+                <td>2</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>TypeScript</td>
+                <td>4</td>
+                <td>5</td>
+                <td>5</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>C#</td>
+                <td>5</td>
+                <td>4</td>
+                <td>7</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>C++</td>
+                <td>6</td>
+                <td>6</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>C</td>
+                <td>7</td>
+                <td>7</td>
+                <td>6</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>PHP</td>
+                <td>8</td>
+                <td>8</td>
+                <td>12</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>Go</td>
+                <td>11</td>
+                <td>10</td>
+                <td>9</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Rust</td>
+                <td>13</td>
+                <td>9</td>
+                <td>8</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>GitHub Language Activity</h2>
+        <div class="chart-container">
+          <h3>Top 10 Languages by GitHub pull requests (GitHut 2.0, Q4 2024)</h3>
+          <table class="ranking-table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Language</th>
+                <th>PRs (%)</th>
+                <th>Issues (%)</th>
+                <th>Pushes (%)</th>
+                <th>Stars (%)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Python</td>
+                <td>21.0</td>
+                <td>17.8</td>
+                <td>18.5</td>
+                <td>24.1</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>JavaScript</td>
+                <td>16.5</td>
+                <td>16.2</td>
+                <td>14.8</td>
+                <td>13.2</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>TypeScript</td>
+                <td>14.2</td>
+                <td>15.5</td>
+                <td>12.1</td>
+                <td>16.8</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Java</td>
+                <td>8.6</td>
+                <td>7.4</td>
+                <td>9.2</td>
+                <td>5.8</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Go</td>
+                <td>5.4</td>
+                <td>5.1</td>
+                <td>5.8</td>
+                <td>7.2</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Rust</td>
+                <td>4.8</td>
+                <td>5.6</td>
+                <td>4.2</td>
+                <td>8.5</td>
+              </tr>
+              <tr>
+                <td>7</td>
+                <td>C++</td>
+                <td>4.1</td>
+                <td>4.3</td>
+                <td>4.5</td>
+                <td>4.0</td>
+              </tr>
+              <tr>
+                <td>8</td>
+                <td>PHP</td>
+                <td>3.5</td>
+                <td>3.0</td>
+                <td>3.8</td>
+                <td>2.1</td>
+              </tr>
+              <tr>
+                <td>9</td>
+                <td>C#</td>
+                <td>3.2</td>
+                <td>3.8</td>
+                <td>3.5</td>
+                <td>3.4</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>Ruby</td>
+                <td>2.8</td>
+                <td>2.5</td>
+                <td>2.9</td>
+                <td>1.9</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section>
+        <h2>Package Registry Growth</h2>
+        <div class="chart-container">
+          <h3>Total packages by registry (log scale)</h3>
+          <canvas id="registryChart"></canvas>
+        </div>
+      </section>
+
+      <section>
+        <h2>Sources</h2>
+
+        <div class="source">
+          <h3>
+            <a
+              href="https://redmonk.com/sogrady/category/technology/programming-languages/"
+              >RedMonk Language Rankings</a
+            >
+            <span class="freshness">Jan 2024</span>
+          </h3>
+          <p>
+            Biannual composite of GitHub activity + Stack Overflow discussion.
+            Published since 2010.
+          </p>
+          <div class="tags">
+            <span class="tag">Biannual</span>
+            <span class="tag">GitHub + SO</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://pypl.github.io/PYPL.html">PYPL Index</a>
+            <span class="freshness">Mar 2025</span>
+          </h3>
+          <p>
+            Monthly index from Google Trends tutorial search data. Covers
+            languages, IDEs, ORMs, and databases.
+          </p>
+          <div class="tags">
+            <span class="tag">Monthly</span>
+            <span class="tag">Google Trends</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://spectrum.ieee.org/top-programming-languages/"
+              >IEEE Spectrum Rankings</a
+            >
+            <span class="freshness">2024 edition</span>
+          </h3>
+          <p>
+            Annual interactive ranking combining GitHub, Google, Stack Overflow,
+            Twitter, and job data. Customizable weighting.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Multi-source</span>
+            <span class="tag">Interactive</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://madnight.github.io/githut/">GitHut 2.0</a>
+            <span class="freshness">Q4 2024</span>
+          </h3>
+          <p>
+            Quarterly GitHub language stats from PRs, issues, pushes, and stars.
+          </p>
+          <div class="tags">
+            <span class="tag">Quarterly</span>
+            <span class="tag">GitHub data</span>
+            <span class="tag">Languages</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://insights.stackoverflow.com/trends"
+              >Stack Overflow Trends</a
+            >
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Question share by tag over time. Compare up to 15 tags
+            interactively.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">Interactive</span>
+            <span class="tag">Questions by tag</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://github.blog/news-insights/octoverse/"
+              >GitHub Octoverse</a
+            >
+            <span class="freshness">Oct 2024</span>
+          </h3>
+          <p>
+            Annual open-source report. Top languages, contributor growth, and
+            global activity across 100M+ developers.
+          </p>
+          <div class="tags">
+            <span class="tag">Annual</span>
+            <span class="tag">Languages</span>
+            <span class="tag">Open source</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://github.com/edebill/modulecounts"
+              >modulecounts</a
+            >
+            <span class="freshness stale">Inactive</span>
+          </h3>
+          <p>
+            Tracked total packages across npm, PyPI, Maven Central, RubyGems,
+            crates.io, NuGet, and more. The deployed site is no longer
+            available, but historical data and source code remain in the GitHub
+            repository.
+          </p>
+          <div class="tags">
+            <span class="tag">Package managers</span>
+            <span class="tag">Ecosystem growth</span>
+            <span class="tag">Historical data</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://npmtrends.com/">npm trends</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Compare npm package download counts over time for competing JS
+            libraries.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">npm</span>
+            <span class="tag">Package downloads</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://pypistats.org/">PyPI Stats</a>
+            <span class="freshness">Live</span>
+          </h3>
+          <p>
+            Per-package daily/weekly/monthly Python downloads with Python
+            version and OS breakdowns. API available.
+          </p>
+          <div class="tags">
+            <span class="tag">Continuously updated</span>
+            <span class="tag">Python</span>
+            <span class="tag">API available</span>
+          </div>
+        </div>
+
+        <div class="source">
+          <h3>
+            <a href="https://innovationgraph.github.com/"
+              >GitHub Innovation Graph</a
+            >
+            <span class="freshness">Q3 2024</span>
+          </h3>
+          <p>
+            Developer activity and languages by country/territory. Downloadable
+            as CSV.
+          </p>
+          <div class="tags">
+            <span class="tag">Quarterly</span>
+            <span class="tag">By country</span>
+            <span class="tag">Downloadable CSV</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>
+        DevData &mdash;
+        <a href="https://github.com/wilfred/devdata">View on GitHub</a>
+      </p>
+    </footer>
+
+    <script>
+      new Chart(document.getElementById("registryChart"), {
+        type: "line",
+        data: {
+          labels: [
+            "2017",
+            "2018",
+            "2019",
+            "2020",
+            "2021",
+            "2022",
+            "2023",
+            "2024",
+          ],
+          datasets: [
+            {
+              label: "npm",
+              data: [500, 700, 1000, 1300, 1600, 1900, 2200, 2600],
+              borderColor: "#cb3837",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "PyPI",
+              data: [115, 150, 200, 265, 340, 400, 475, 560],
+              borderColor: "#3776ab",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "Maven Central",
+              data: [220, 280, 340, 400, 470, 530, 580, 640],
+              borderColor: "#c71a36",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "NuGet",
+              data: [100, 130, 170, 220, 280, 330, 370, 410],
+              borderColor: "#004880",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+            {
+              label: "crates.io",
+              data: [10, 20, 32, 48, 68, 95, 125, 160],
+              borderColor: "#dea584",
+              tension: 0.3,
+              pointRadius: 3,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "bottom" },
+          },
+          scales: {
+            y: {
+              type: "logarithmic",
+              title: { display: true, text: "Packages (thousands)" },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
