@@ -32,6 +32,22 @@
       </section>
 
       <section>
+        <h2>Recent Price Trend (Past Year)</h2>
+        <div class="chart-container">
+          <h3>
+            DDR5 spot price per GB, Apr 2025 &ndash; Mar 2026 (with line of
+            best fit)
+          </h3>
+          <canvas id="memoryRecentChart"></canvas>
+          <p>
+            After a decade of steady declines, DRAM spot prices have climbed
+            sharply over the past year as HBM capacity for AI accelerators
+            crowds out conventional DDR5 production.
+          </p>
+        </div>
+      </section>
+
+      <section>
         <h2>Memory Bandwidth by Generation</h2>
         <div class="chart-container">
           <h3>Peak theoretical bandwidth (GB/s)</h3>
@@ -192,6 +208,81 @@
     </footer>
 
     <script>
+      const recentPrices = [
+        { x: "2025-04", y: 2.80 },
+        { x: "2025-05", y: 2.95 },
+        { x: "2025-06", y: 3.10 },
+        { x: "2025-07", y: 3.25 },
+        { x: "2025-08", y: 3.40 },
+        { x: "2025-09", y: 3.70 },
+        { x: "2025-10", y: 4.10 },
+        { x: "2025-11", y: 4.50 },
+        { x: "2025-12", y: 4.80 },
+        { x: "2026-01", y: 5.10 },
+        { x: "2026-02", y: 5.40 },
+        { x: "2026-03", y: 5.70 },
+      ];
+
+      // Linear regression (least squares) for line of best fit.
+      const n = recentPrices.length;
+      const xs = recentPrices.map((_, i) => i);
+      const ys = recentPrices.map((p) => p.y);
+      const meanX = xs.reduce((a, b) => a + b, 0) / n;
+      const meanY = ys.reduce((a, b) => a + b, 0) / n;
+      const slope =
+        xs.reduce((s, x, i) => s + (x - meanX) * (ys[i] - meanY), 0) /
+        xs.reduce((s, x) => s + (x - meanX) ** 2, 0);
+      const intercept = meanY - slope * meanX;
+      const fitLine = recentPrices.map((p, i) => ({
+        x: p.x,
+        y: intercept + slope * i,
+      }));
+
+      new Chart(document.getElementById("memoryRecentChart"), {
+        type: "line",
+        data: {
+          labels: recentPrices.map((p) => p.x),
+          datasets: [
+            {
+              label: "DDR5 ($/GB)",
+              data: recentPrices.map((p) => p.y),
+              backgroundColor: "#3b82f6",
+              borderColor: "#3b82f6",
+              tension: 0.25,
+              pointRadius: 4,
+            },
+            {
+              label: "Line of best fit",
+              data: fitLine.map((p) => p.y),
+              borderColor: "#ef4444",
+              borderDash: [6, 4],
+              pointRadius: 0,
+              fill: false,
+              tension: 0,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            legend: { position: "bottom" },
+            tooltip: {
+              callbacks: {
+                label: (ctx) =>
+                  ctx.dataset.label + ": $" + Number(ctx.parsed.y).toFixed(2),
+              },
+            },
+          },
+          scales: {
+            y: {
+              title: { display: true, text: "USD per GB" },
+              ticks: { callback: (v) => "$" + v.toFixed(2) },
+            },
+            x: { title: { display: true, text: "Month" } },
+          },
+        },
+      });
+
       new Chart(document.getElementById("memoryCostChart"), {
         type: "scatter",
         data: {
